@@ -58,5 +58,5 @@ RUN curl -fSL https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-in
 ENV NGX_ROOT /usr/local/openresty/nginx
 ENV PATH $PATH:$NGX_ROOT/sbin:/usr/local/bin
 
-ENTRYPOINT ["/usr/bin/dumb-init", "openresty"]
-CMD ["run", "--user=root", "--working-directory=/home/openresty"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["/usr/local/openresty/nginx/sbin/nginx", "-g", "daemon off;"]
