@@ -59,4 +59,4 @@ ENV NGX_ROOT /usr/local/openresty/nginx
 ENV PATH $PATH:$NGX_ROOT/sbin:/usr/local/bin
 
 ENTRYPOINT ["/usr/bin/dumb-init", "openresty"]
-CMD ["run", "--user=root", "--working-directory=/usr/local/openresty/nginx/sbin"]
+CMD ["run", "--user=root", "--working-directory=/home/openresty"]
