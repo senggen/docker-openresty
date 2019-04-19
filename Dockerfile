@@ -52,7 +52,7 @@ ENV LUA_CPATH="/usr/local/openresty/site/lualib/?.so;/usr/local/openresty/lualib
 RUN luarocks install luacheck && luarocks install luacov
 
 # Gitlab Runner
-RUN wget -qO /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 && \
+RUN curl -fSL https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 -o /usr/bin/dumb-init && \
     chmod +x /usr/bin/dumb-init
 
 ENV NGX_ROOT /usr/local/openresty/nginx
